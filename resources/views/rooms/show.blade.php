@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="text-white flex w-full flex-col items-center m-4" id="messages-container">
+    <div class="text-white flex w-full flex-col items-center" id="messages-container">
         @php
             $authUser = auth()->id();
         @endphp
