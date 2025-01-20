@@ -7,6 +7,21 @@
 * Наличие вёрстки
 * Авторизация через jetstream+fortify
 
-TODO: 
-1. написать развёртку проекта
-2. написать envexample
+## Требования
+* php 8.4
+* node + npm
+* docker
+
+## Развертка проекта
+```bash
+composer i
+vendor/bin/sail up -d
+npm i
+npm run dev
+#после уже можно выполнить npm run build
+```
+после выполнения команд выше ^:
+```bash
+vendor/bin/sail reverb:start
+vendor/bin/sail artisan migrate:fresh --seed
+```
