@@ -24,7 +24,7 @@
         </div>
     </div>
 
-    <div class="text-white flex w-full flex-col items-center" id="messages-container">
+    <div class="mb-24 text-white flex w-full flex-col items-center" id="messages-container">
         @php
             $authUser = auth()->id();
         @endphp
@@ -130,11 +130,11 @@
                         const isAuthUser = e.message.sender_id === {{ auth()->id() }};
                         const messageHTML = `
             <div class="${isAuthUser ? 'text-end' : 'text-start'} w-1/2 my-2">
-                <div class="${isAuthUser ? 'bg-blue-500' : 'bg-gray-700'} text-white p-3 rounded-lg">
-                    ${e.message.text}
-                </div>
                 <div class="text-sm text-cyan-400 mt-1">
                     ${e.sender.login}
+                </div>
+                <div class="${isAuthUser ? 'bg-blue-500' : 'bg-gray-700'} text-white p-3 rounded-lg">
+                    ${e.message.text}
                 </div>
             </div>
         `;
