@@ -22,7 +22,7 @@
 <body class="font-sans antialiased bg-gray-900">
 <x-banner/>
 
-<div class="min-h-screen bg-gray-900 pt-16"">
+<div class="min-h-screen bg-gray-900 pt-16">
     @livewire('navigation-menu')
 
     <!-- Page Heading -->
@@ -57,6 +57,15 @@
         {{ $slot }}
     </main>
 </div>
+<script>
+    window.onhashchange = function() {
+        if (window.innerDocClick) {
+            console.log(123);
+        } else {
+            console.log(321);
+        }
+    }
+</script>
 @stack('modals')
 
 @livewireScripts
